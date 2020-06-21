@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304969814880",
+    "firebase_url": "https://basic-2-c6b0d.firebaseio.com",
+    "project_id": "basic-2-c6b0d",
+    "storage_bucket": "basic-2-c6b0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304969814880:android:a6a9253058acc843f30405",
+        "android_client_info": {
+          "package_name": "com.kowshik.basic2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304969814880-r27gmbm55e7ra7slshprpgkappmfte6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZrRDSGOBabRFLlK-eTGZfmCgRb4sttuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304969814880-r27gmbm55e7ra7slshprpgkappmfte6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
