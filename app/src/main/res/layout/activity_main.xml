@@ -36,16 +36,29 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
-            android:name="com.kowshik.basic2.Fragment_1"
             android:id="@+id/flfragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:name="com.kowshik.basic2.Fragment_1"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_margin="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b_frag1"
-            android:layout_margin="15dp"/>
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/randomNo"
+            android:layout_width="117dp"
+            android:layout_height="53dp"
+            android:hint="Random No"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flfragment"
+            app:layout_constraintVertical_bias="0.133" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
