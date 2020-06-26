@@ -16,10 +16,9 @@
 
         />
     <item
-        android:title="item3"
-        android:id="@+id/item3"
+        android:id="@+id/logout"
 
-        />
+        android:title="Logout" />
 </group>
 
 </menu>

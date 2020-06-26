@@ -2,21 +2,30 @@ package com.kowshik.basic2
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
+import android.text.TextUtils.isEmpty
 import android.view.View
-import android.widget.*
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.kowshik.basic2.Register
-import java.util.*
+import com.backendless.Backendless
+import com.backendless.BackendlessUser
+import com.backendless.async.callback.AsyncCallback
+import com.backendless.exceptions.BackendlessFault
+
 
 class Register : AppCompatActivity() {
-    var UserId = String()
+    private val TAG = this::class.qualifiedName
+    companion object {
+        val APP_ID = "A0A3DC8F-1A68-8FE0-FF7C-F4D8C5B5F100"
+        val API_KEY = "F21045F8-BE5A-4F77-AC44-03347EDDE905"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        Backendless.initApp(this,APP_ID, API_KEY)
+
         val mEmail = findViewById<TextView>(R.id.emailid)
         val mFullName = findViewById<TextView>(R.id.userdisplayname)
         val mLogInbtn = findViewById<TextView>(R.id.loginText)
@@ -24,32 +33,25 @@ class Register : AppCompatActivity() {
         val mPhone = findViewById<TextView>(R.id.ph)
         val mPassword = findViewById<TextView>(R.id.password)
         val progessBar = findViewById<ProgressBar>(R.id.progressBar)
-        val fAuth = FirebaseAuth.getInstance()
-        val fstore = FirebaseFirestore.getInstance()
-
-        if (fAuth.currentUser != null) {
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-            finish()
-        }
-        mLogInbtn.setOnClickListener(View.OnClickListener { startActivity(Intent(applicationContext, Login::class.java)) })
+        mLogInbtn.setOnClickListener { startActivity(Intent(applicationContext, Login::class.java)) }
         mregisterbtn.setOnClickListener(View.OnClickListener {
             val email = mEmail.text.toString().trim { it <= ' ' }
             val pwd = mPassword.text.toString().trim { it <= ' ' }
             val fullname = mFullName.text.toString()
             val phoneno = mPhone.text.toString()
-            if (TextUtils.isEmpty(email)) {
+            if (isEmpty(email)) {
                 mEmail.error = "Email is required "
                 return@OnClickListener
             }
-            if (TextUtils.isEmpty(pwd)) {
+            if (isEmpty(pwd)) {
                 mPassword.error = "Password required"
                 return@OnClickListener
             }
-            if (TextUtils.isEmpty(phoneno)) {
+            if (isEmpty(phoneno)) {
                 mPhone.error = "Phone NO required"
                 return@OnClickListener
             }
-            if (TextUtils.isEmpty(fullname)) {
+            if (isEmpty(fullname)) {
                 mFullName.error = "Username is required"
                 return@OnClickListener
             }
@@ -57,29 +59,30 @@ class Register : AppCompatActivity() {
                 mPassword.error = "Password length should be at least 6 "
                 return@OnClickListener
             }
-            progessBar.visibility = View.VISIBLE
-            fAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this@Register, "User created", Toast.LENGTH_SHORT).show()
-                    UserId = fAuth.currentUser!!.uid
-                    val documentReference = fstore.collection("Users").document(UserId)
-                    val user: MutableMap<String, Any> = HashMap()
-                    user["Email"] = email
-                    user["password"] = pwd
-                    user["full name"] = fullname
-                    user["Phone NO "] = phoneno
-                    documentReference.set(user).addOnSuccessListener { Log.d(TAG, "onSuccess: User profile is created for$UserId") }
-                    startActivity(Intent(applicationContext, Login::class.java))
-                } else {
-                    Toast.makeText(this@Register, "Error :( " + task.exception!!.message, Toast.LENGTH_SHORT).show()
-                    progessBar.visibility = View.GONE
-                }
-            }
-        }
-        )
-    }
 
-    companion object {
-        const val TAG = "TAG"
+            val user = BackendlessUser()
+            user.email=email
+            user.password = pwd
+
+            user.setProperty( "name", fullname );
+            user.setProperty( "phoneNumber", phoneno );
+
+            progessBar.visibility = View.VISIBLE
+
+                Backendless.UserService.register(user, object : AsyncCallback<BackendlessUser?> {
+                    override fun handleResponse(response: BackendlessUser?) {
+                        progessBar.visibility = View.INVISIBLE
+                        Toast.makeText(this@Register, "User has been registered", Toast.LENGTH_LONG).show()
+                        startActivity(Intent(applicationContext, Login::class.java))
+                    }
+
+                    override fun handleFault(fault: BackendlessFault) {
+                        progessBar.visibility = View.INVISIBLE
+                        Toast.makeText(this@Register, fault.message, Toast.LENGTH_LONG).show()
+                    }
+                })
+
+
+        })
     }
 }
