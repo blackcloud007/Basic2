@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -38,12 +39,15 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         Backendless.initApp(this@MainActivity, APP_ID, API_KEY)
         val drawerLayout=findViewById<DrawerLayout>(R.id.drawerlayout)
         setNavigationViewListener()
+        val brecyclerview :Button=findViewById(R.id.bt_recyclerview)
         val bfrag1 = findViewById<Button>(R.id.b_frag1)
         val bfrag2 = findViewById<Button>(R.id.b_frag2)
         val fragment1: Fragment = Fragment_1()
         val fragment2: Fragment = Fragment_2()
+        supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment1).commit()
         bfrag1.setOnClickListener { supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment1).commit() }
         bfrag2.setOnClickListener { supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment2).commit() }
+        brecyclerview.setOnClickListener { startActivity(Intent(this,Recycler_View::class.java)) }
 
         val Randomnumber: TextView = findViewById(R.id.randomNo);
         val mydata = ViewModelProvider(this@MainActivity)[randomgenrator::class.java]
