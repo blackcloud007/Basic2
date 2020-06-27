@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.isEmpty
 import android.view.View
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.backendless.Backendless
 import com.backendless.BackendlessUser
@@ -26,12 +24,12 @@ class Register : AppCompatActivity() {
 
         Backendless.initApp(this,APP_ID, API_KEY)
 
-        val mEmail = findViewById<TextView>(R.id.emailid)
-        val mFullName = findViewById<TextView>(R.id.userdisplayname)
+        val mEmail = findViewById<EditText>(R.id.emailid)
+        val mFullName = findViewById<EditText>(R.id.userdisplayname)
         val mLogInbtn = findViewById<TextView>(R.id.loginText)
-        val mregisterbtn = findViewById<TextView>(R.id.registerbtn)
-        val mPhone = findViewById<TextView>(R.id.ph)
-        val mPassword = findViewById<TextView>(R.id.password)
+        val mregisterbtn = findViewById<Button>(R.id.registerbtn)
+        val mPhone = findViewById<EditText>(R.id.ph)
+        val mPassword = findViewById<EditText>(R.id.password)
         val progessBar = findViewById<ProgressBar>(R.id.progressBar)
         mLogInbtn.setOnClickListener { startActivity(Intent(applicationContext, Login::class.java)) }
         mregisterbtn.setOnClickListener(View.OnClickListener {

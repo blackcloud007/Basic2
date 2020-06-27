@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recycler_View"/>
+        <activity android:name=".DeleteDB"></activity>
+        <activity android:name=".Recycler_View" />
         <activity
             android:name=".Register"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -28,9 +29,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" >
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
+        <activity
+            android:name=".UpdateDB"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

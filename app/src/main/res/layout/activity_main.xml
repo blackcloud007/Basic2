@@ -29,48 +29,79 @@
             android:id="@+id/b_frag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:text="Fragment 2"
+            app:layout_constraintBottom_toTopOf="@+id/flfragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/b_frag1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
 
         <FrameLayout
             android:id="@+id/flfragment"
             android:name="com.kowshik.basic2.Fragment_1"
-            android:layout_width="344dp"
-            android:layout_height="134dp"
-            android:layout_margin="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="345dp"
+            android:layout_height="151dp"
+            android:layout_marginTop="56dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/b_frag1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/b_frag1" />
 
         <TextView
             android:id="@+id/randomNo"
-            android:layout_width="117dp"
-            android:layout_height="53dp"
+            android:layout_width="142dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="69dp"
             android:hint="Random No"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/flfragment"
-            app:layout_constraintVertical_bias="0.133" />
+            app:layout_constraintTop_toBottomOf="@+id/flfragment" />
 
         <Button
             android:id="@+id/bt_recyclerview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RecyclerView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btupdatedb"
+            app:layout_constraintEnd_toStartOf="@+id/viewdatabase"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/randomNo" />
+
+        <Button
+            android:id="@+id/viewdatabase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View DATABASE"
+            app:layout_constraintBottom_toTopOf="@+id/btdelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt_recyclerview"
+            app:layout_constraintTop_toBottomOf="@+id/randomNo" />
+
+        <Button
+            android:id="@+id/btupdatedb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UpdateDataBase"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btdelete"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_recyclerview" />
+
+        <Button
+            android:id="@+id/btdelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Record"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btupdatedb"
+            app:layout_constraintTop_toBottomOf="@+id/viewdatabase" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

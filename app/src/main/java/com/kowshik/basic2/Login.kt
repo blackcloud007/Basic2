@@ -26,9 +26,9 @@ class Login : AppCompatActivity() {
         Backendless.initApp(this@Login, APP_ID, API_KEY)
 
         val mcreatebtn = findViewById<TextView>(R.id.createText)
-        val mEmail = findViewById<TextView>(R.id.emailid)
+        val mEmail = findViewById<EditText>(R.id.emailid)
         val mloginbtn = findViewById<TextView>(R.id.loginbtn)
-        val mPassword = findViewById<TextView>(R.id.password)
+        val mPassword = findViewById<EditText>(R.id.password)
         val progessBar = findViewById<ProgressBar>(R.id.progressBar2)
         mloginbtn.setOnClickListener(View.OnClickListener {
             val email = mEmail.text.toString().trim { it <= ' ' }

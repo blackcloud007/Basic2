@@ -2,8 +2,10 @@ package com.kowshik.basic2
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.text.TextUtils.isEmpty
 
 class DataBaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, 1) {
     companion object{
@@ -29,4 +31,28 @@ class DataBaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         val result : Long? = db?.insert(TABLE_NAME,null,contentValues)
         return result != (-1).toLong()
         }
+    fun View_all_data() : Cursor{
+        val db:SQLiteDatabase?=this.writableDatabase
+        val res : Cursor = db!!.rawQuery("select * from TABLE_NAME",null)
+        val args =
+        return res
+    }
+    fun updatedb(id :String,email : String,name : String , Ph : String):Boolean{
+        val db : SQLiteDatabase?=this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(COL_1,id)
+        if(!isEmpty(email))
+            contentValues.put(COL_2,email)
+        if(!isEmpty(name))
+            contentValues.put(COL_3,name)
+        if(!isEmpty(Ph))
+            contentValues.put(COL_4,Ph)
+
+        db?.update(TABLE_NAME,contentValues,"ID = ? ",arrayOf(id))
+        return true
+    }
+    fun deletedata(id :String):Int{
+        val db:SQLiteDatabase?=this.writableDatabase
+        return db!!.delete(TABLE_NAME,"ID=?", arrayOf(id))
+    }
     }
