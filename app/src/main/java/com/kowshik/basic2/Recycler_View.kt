@@ -26,7 +26,7 @@ class Recycler_View : AppCompatActivity() {
         users.add(User("Itachi","Fire Nation,Leaf country"))
         users.add(User("Pain","Water Nation,Rain country"))
 
-        val adapter=CustomAdapter(users)
+        val adapter = CustomAdapter(users)
         recyclerView.adapter=adapter
 
 

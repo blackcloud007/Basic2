@@ -59,7 +59,9 @@ class Register : AppCompatActivity() {
                 mPassword.error = "Password length should be at least 6 "
                 return@OnClickListener
             }
-
+/**************Database Local**********************************************/
+            addtodb(email,fullname,phoneno)
+/*****************************************************************************/
             val user = BackendlessUser()
             user.email=email
             user.password = pwd
@@ -84,5 +86,14 @@ class Register : AppCompatActivity() {
 
 
         })
+    }
+    fun addtodb(email : String, Name :String, ph:String){
+        val db : DataBaseHelper = DataBaseHelper(this@Register)
+        val result : Boolean = db.insert_data(email,Name,ph)
+        if (result){
+            Toast.makeText(this,"User details were successfully added to the Database",Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(this,"ERROR..Can't add this to Database",Toast.LENGTH_SHORT).show()
+        }
     }
 }

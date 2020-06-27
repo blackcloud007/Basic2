@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         Backendless.initApp(this@MainActivity, APP_ID, API_KEY)
         val drawerLayout=findViewById<DrawerLayout>(R.id.drawerlayout)
         setNavigationViewListener()
@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment1).commit()
         bfrag1.setOnClickListener { supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment1).commit() }
         bfrag2.setOnClickListener { supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment2).commit() }
+
+
         brecyclerview.setOnClickListener { startActivity(Intent(this,Recycler_View::class.java)) }
 
         val Randomnumber: TextView = findViewById(R.id.randomNo);
