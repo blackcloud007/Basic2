@@ -1,4 +1,4 @@
-package com.kowshik.basic2
+package com.kowshik.basic2.SQL
 
 import android.content.ContentValues
 import android.content.Context

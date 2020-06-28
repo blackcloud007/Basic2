@@ -5,7 +5,6 @@ import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -19,6 +18,11 @@ import com.backendless.Backendless
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.google.android.material.navigation.NavigationView
+import com.kowshik.basic2.RecyclerView.Recycler_View
+import com.kowshik.basic2.SQL.DataBaseHelper
+import com.kowshik.basic2.SQL.DeleteDB
+import com.kowshik.basic2.SQL.UpdateDB
+import com.kowshik.basic2.Starters.Login
 
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -52,7 +56,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         bfrag2.setOnClickListener { supportFragmentManager.beginTransaction().replace(R.id.flfragment, fragment2).commit() }
 
 
-        brecyclerview.setOnClickListener { startActivity(Intent(this,Recycler_View::class.java)) }
+        brecyclerview.setOnClickListener { startActivity(Intent(this, Recycler_View::class.java)) }
 
         ViewDatabase()
         UpdateDatabase()
@@ -75,7 +79,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                         override fun handleResponse(response: Void?) {
                             Log.i(TAG, "Logging user out")
                             Toast.makeText(applicationContext, "Logging user out", Toast.LENGTH_LONG).show()
-                            startActivity(Intent(this@MainActivity,Login::class.java))
+                            startActivity(Intent(this@MainActivity, Login::class.java))
                         }
 
                         override fun handleFault(fault: BackendlessFault) {
@@ -100,7 +104,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     fun ViewDatabase(){
         val bDatabaseView:Button= findViewById<Button>(R.id.viewdatabase)
-        val db:DataBaseHelper= DataBaseHelper(this)
+        val db: DataBaseHelper = DataBaseHelper(this)
         bDatabaseView.setOnClickListener {
            val res:Cursor = db.View_all_data()
             if (res.count==0){
@@ -130,13 +134,13 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     fun UpdateDatabase(){
         val btupdate:Button= findViewById<Button>(R.id.btupdatedb)
         btupdate.setOnClickListener {
-            startActivity(Intent(this,UpdateDB::class.java))
+            startActivity(Intent(this, UpdateDB::class.java))
         }
     }
     fun DeleteDatabase(){
         val btdelete:Button= findViewById<Button>(R.id.btdelete)
         btdelete.setOnClickListener {
-            startActivity(Intent(this,DeleteDB::class.java))
+            startActivity(Intent(this, DeleteDB::class.java))
         }
     }
 }

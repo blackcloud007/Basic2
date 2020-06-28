@@ -1,10 +1,11 @@
-package com.kowshik.basic2
+package com.kowshik.basic2.RecyclerView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kowshik.basic2.R
 
 class CustomAdapter(val Userlist : ArrayList<User>):RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

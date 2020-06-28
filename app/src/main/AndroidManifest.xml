@@ -12,15 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeleteDB"></activity>
-        <activity android:name=".Recycler_View" />
+        <activity android:name=".SQL.DeleteDB"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".RecyclerView.Recycler_View" />
         <activity
-            android:name=".Register"
+            android:name=".Starters.Register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Login"
+            android:name=".Starters.Login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Starters.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,10 +32,13 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+
+        </activity>
         <activity
-            android:name=".UpdateDB"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".SQL.UpdateDB"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:background="#575252"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <LinearLayout
-            android:padding="10dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
                 android:id="@+id/textviewname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="JohnWick"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <TextView
                 android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="82-92 Beaver Street at Pearl Street \n New York City."
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         </LinearLayout>
 

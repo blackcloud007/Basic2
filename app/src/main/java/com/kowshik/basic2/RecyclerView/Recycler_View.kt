@@ -1,11 +1,10 @@
-package com.kowshik.basic2
+package com.kowshik.basic2.RecyclerView
 
-import android.icu.lang.UCharacter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kowshik.basic2.R
 import java.util.ArrayList
 
 class Recycler_View : AppCompatActivity() {
@@ -18,13 +17,13 @@ class Recycler_View : AppCompatActivity() {
 
         val users=ArrayList<User>()
 
-        users.add(User("Kakashi Hatake","Fire Nation,Leaf country"))
-        users.add(User("Naruto Uzumaki","Fire Nation,Leaf country"))
-        users.add(User("Sasuke","Fire Nation,Leaf country"))
-        users.add(User("Rock Lee","Fire Nation,Leaf country"))
-        users.add(User("Gaara","Sand Nation,Earth country"))
-        users.add(User("Itachi","Fire Nation,Leaf country"))
-        users.add(User("Pain","Water Nation,Rain country"))
+        users.add(User("Kakashi Hatake", "Fire Nation,Leaf country"))
+        users.add(User("Naruto Uzumaki", "Fire Nation,Leaf country"))
+        users.add(User("Sasuke", "Fire Nation,Leaf country"))
+        users.add(User("Rock Lee", "Fire Nation,Leaf country"))
+        users.add(User("Gaara", "Sand Nation,Earth country"))
+        users.add(User("Itachi", "Fire Nation,Leaf country"))
+        users.add(User("Pain", "Water Nation,Rain country"))
 
         val adapter = CustomAdapter(users)
         recyclerView.adapter=adapter

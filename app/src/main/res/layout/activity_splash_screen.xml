@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    android:background="#1E1E1D"
+    tools:context=".Starters.SplashScreen">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="268dp"
+        android:layout_height="71dp"
+        android:fontFamily="sans-serif-thin"
+        android:shadowColor="#EDE6E6"
         android:text="Welcome to my app"
-        android:textSize="36sp"
+        android:textColor="#BDBABA"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +24,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="174dp"
-        android:layout_height="97dp"
+        android:layout_width="182dp"
+        android:layout_height="99dp"
+        android:fontFamily="@font/bangers"
         android:text="BASIC2"
-        android:textSize="50dp"
+        android:textColor="#E6E6E6"
+        android:textSize="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

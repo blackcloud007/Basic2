@@ -1,4 +1,4 @@
-package com.kowshik.basic2
+package com.kowshik.basic2.Starters
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.kowshik.basic2.R
+import com.kowshik.basic2.SQL.DataBaseHelper
 
 
 class Register : AppCompatActivity() {
@@ -22,7 +24,7 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        Backendless.initApp(this,APP_ID, API_KEY)
+        Backendless.initApp(this, APP_ID, API_KEY)
 
         val mEmail = findViewById<EditText>(R.id.emailid)
         val mFullName = findViewById<EditText>(R.id.userdisplayname)

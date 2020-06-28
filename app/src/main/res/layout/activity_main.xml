@@ -10,16 +10,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/black">
 
 
         <Button
             android:id="@+id/b_frag1"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
             android:text="Fragment 1"
-            android:textColor="#000000"
+            android:textColor="#C8C5C5"
             app:layout_constraintEnd_toStartOf="@+id/b_frag2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +30,12 @@
 
         <Button
             android:id="@+id/b_frag2"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
             android:text="Fragment 2"
+            android:textColor="#C8C5C5"
             app:layout_constraintBottom_toTopOf="@+id/flfragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -43,6 +49,7 @@
             android:layout_width="345dp"
             android:layout_height="151dp"
             android:layout_marginTop="56dp"
+            android:background="#121111"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b_frag1" />
@@ -61,9 +68,12 @@
 
         <Button
             android:id="@+id/bt_recyclerview"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
             android:text="RecyclerView"
+            android:textColor="#C8C5C5"
             app:layout_constraintBottom_toTopOf="@+id/btupdatedb"
             app:layout_constraintEnd_toStartOf="@+id/viewdatabase"
             app:layout_constraintHorizontal_bias="0.5"
@@ -72,9 +82,12 @@
 
         <Button
             android:id="@+id/viewdatabase"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="View DATABASE"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
+            android:text="View Database"
+            android:textColor="#C8C5C5"
             app:layout_constraintBottom_toTopOf="@+id/btdelete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -83,9 +96,12 @@
 
         <Button
             android:id="@+id/btupdatedb"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="UpdateDataBase"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
+            android:text="Update DataBase"
+            android:textColor="#C8C5C5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btdelete"
             app:layout_constraintHorizontal_bias="0.5"
@@ -94,9 +110,12 @@
 
         <Button
             android:id="@+id/btdelete"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="#626365"
+            android:fontFamily="@font/aclonica"
             android:text="Delete Record"
+            android:textColor="#C8C5C5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -109,10 +128,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#373636"
         app:headerLayout="@layout/nav_header"
-        app:itemTextColor="#0727FD"
-        app:menu="@menu/drawer_view"
-        />
+        app:itemTextColor="#E6E7E8"
+        app:menu="@menu/drawer_view" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

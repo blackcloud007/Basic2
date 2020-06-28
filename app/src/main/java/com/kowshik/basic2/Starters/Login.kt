@@ -1,4 +1,4 @@
-package com.kowshik.basic2
+package com.kowshik.basic2.Starters
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.kowshik.basic2.MainActivity
+import com.kowshik.basic2.R
 
 
 class Login : AppCompatActivity() {
